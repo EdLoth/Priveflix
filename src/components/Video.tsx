@@ -35,21 +35,20 @@ export function PlayerVideo(props: VideoProps) {
 
   return (
     <div className="flex-1 flex items-center">
-      <div className="bg-black mx-3  flex flex-col justify-between items-center lg:flex-row lg:mx-14">
+      <div className="bg-black  flex flex-col justify-between items-center lg:flex-row lg:mx-14">
         <div className="p-8  mx-auto">
             <div className="flex-1">
               <Link className="flex items-center w-40 mb-6" to="/">
               <ArrowCircleLeft size={56} color={'#9400D3'} />
               </Link>
-              <h1 className="text-[40px] font-bold mb-12 w-10/12">
+              <h1 className="text-[40px] font-bold mb-3 w-10/12">
                 {data.movie?.title}
               </h1>
-
-
+              <span className="font-semibold text-2xl mb-48">{data.movie?.duration}</span>
               <VideoGender movieSlug={props.movieSlug} />
               <div className="flex gap-4 items-center">
                 <VideoDate availableAt={new Date(data.movie?.availableAt)} />
-                <span className="font-semibold">{data.movie?.duration}</span>
+                
               </div>
               <p className="mt-4 text-gray-200 leading-relaxed text-justify w-10/12">
                 <span className="font-bold text-xl">Sinopse: </span>{data.movie?.description}
@@ -63,7 +62,7 @@ export function PlayerVideo(props: VideoProps) {
               </div>
             </div>
         </div>
-        <div className=" w-full  aspect-video lg:h-[60vh]">
+        <div className="  aspect-video w-full lg:h-[60vh]">
           <Player controls>
             <Video crossOrigin="" poster={data.movie?.poster}>
               {/* These are passed directly to the underlying HTML5 `<video>` element. */}

@@ -23,7 +23,7 @@ export function VideoGender(props: VideoGenderProps) {
 
   return (
     <>
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-wrap gap-2 items-center">
         <span className="font-semibold text-2xl text-white">Generos:</span>
         {data?.movie?.genders.map(movieInfo => {
           return (

@@ -65,7 +65,7 @@ export function PlayerVideo(props: VideoProps) {
         </div>
         <div className="h-[60vh] w-full  aspect-video">
           <Player controls>
-            <Video crossOrigin="" poster={data.movie?.poster}>
+            <Video crossOrigin="" poster={data.movie.poster}>
               {/* These are passed directly to the underlying HTML5 `<video>` element. */}
               {/* Why `data-src`? Lazy loading, you can always use `src` if you prefer.  */}
               <source

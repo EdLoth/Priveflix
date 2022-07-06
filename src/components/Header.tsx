@@ -30,12 +30,12 @@ export function Header(){
         <span className="text-white text-3xl px-2">Prive<span className="font-bold text-[#9400D3]">Flix</span></span>
         </div>
 
-        <div className="flex flex-row">
-            <Link className="text-white text-xl px-2" to="/">Inicio</Link>
-            <Link className="text-white text-xl px-2" to="/">Séries</Link>
-            <Link className="text-white text-xl px-2" to="/">Filmes</Link>
-            <Link className="text-white text-xl px-2" to="/">Minha Lista</Link>
-            <Link className="text-white text-xl px-2" to="/">Perfil</Link>
+        <div className="flex flex-row items-center">
+            <Link className="text-white text-xl px-2 hover:text-[#aa18e9] hover:font-medium transition-colors" to="/">Início</Link>
+            <Link className="text-white px-2 cursor-not-allowed" to="/">Séries</Link>
+            <Link className="text-white px-2 cursor-not-allowed" to="/">Filmes</Link>
+            <Link className="text-white px-2 cursor-not-allowed" to="/">Minha Lista</Link>
+            <Link className="text-white px-2 cursor-not-allowed" to="/">Perfil</Link>
         </div>
       </div>
      

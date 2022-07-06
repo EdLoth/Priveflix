@@ -35,7 +35,7 @@ export function PlayerVideo(props: VideoProps) {
 
   return (
     <div className="flex-1 flex items-center">
-      <div className="bg-black mx-14 flex justify-between items-center">
+      <div className="bg-black mx-3  flex flex-col justify-between items-center lg:flex-row lg:mx-14">
         <div className="p-8  mx-auto">
             <div className="flex-1">
               <Link className="flex items-center w-40 mb-6" to="/">
@@ -63,9 +63,9 @@ export function PlayerVideo(props: VideoProps) {
               </div>
             </div>
         </div>
-        <div className="h-[60vh] w-full  aspect-video">
+        <div className=" w-full  aspect-video lg:h-[60vh]">
           <Player controls>
-            <Video crossOrigin="" poster={data.movie.poster}>
+            <Video crossOrigin="" poster={data.movie?.poster}>
               {/* These are passed directly to the underlying HTML5 `<video>` element. */}
               {/* Why `data-src`? Lazy loading, you can always use `src` if you prefer.  */}
               <source

@@ -6689,39 +6689,62 @@ export type GetMovieBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetMovieBySlugQuery = { __typename?: 'Query', movie?: { __typename?: 'Movie', title: string, videoId: string, description?: string | null, duration?: string | null, poster?: string | null, availableAt?: any | null, ageIndicative: AgeIndicative, genders: Array<{ __typename?: 'Gender', nameGender?: string | null }>, directors: Array<{ __typename?: 'Director', name: string }> } | null };
+export type GetMovieBySlugQuery = {
+  __typename?: 'Query',
+  movie: {
+    __typename?: 'Movie',
+    title: string,
+    videoId: string,
+    description: string,
+    duration: string,
+    poster: string,
+    availableAt?: any | null,
+    ageIndicative: AgeIndicative,
+    genders: Array<{
+      __typename?: 'Gender',
+      nameGender: string
+    }>, directors:
+    Array<{
+      __typename?:
+      'Director',
+      name: string
+    }>
+  }
+};
 
 export type GetMoviesByGenderIdQueryVariables = Exact<{
   idGender?: InputMaybe<Scalars['ID']>;
 }>;
 
 
-export type GetMoviesByGenderIdQuery = { 
-  __typename?: 'Query', 
-  gender: { 
-    __typename?: 'Gender', 
-    nameGender: string, 
-    movies: Array<{ 
-      __typename?: 'Movie', 
-      id: string, 
-      title: string, 
-      banner: string, 
-      slug: string 
-    }> }
-   };
+export type GetMoviesByGenderIdQuery = {
+  __typename?: 'Query',
+  gender: {
+    __typename?: 'Gender',
+    nameGender: string,
+    movies: Array<{
+      __typename?: 'Movie',
+      id: string,
+      title: string,
+      banner: string,
+      slug: string
+    }>
+  }
+};
 
 export type GetTitleMovieQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetTitleMovieQuery = {
-   __typename?: 'Query', 
-   movies: Array<{
-     __typename?: 'Movie', 
-     id: string, 
-     title: string, 
-     banner: string, 
-     slug: string 
-    }> };
+  __typename?: 'Query',
+  movies: Array<{
+    __typename?: 'Movie',
+    id: string,
+    title: string,
+    banner: string,
+    slug: string
+  }>
+};
 
 
 export const GetGenderMovideBySlugDocument = gql`
@@ -6752,13 +6775,13 @@ export const GetGenderMovideBySlugDocument = gql`
  * });
  */
 export function useGetGenderMovideBySlugQuery(baseOptions?: Apollo.QueryHookOptions<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>(GetGenderMovideBySlugDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>(GetGenderMovideBySlugDocument, options);
+}
 export function useGetGenderMovideBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>(GetGenderMovideBySlugDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>(GetGenderMovideBySlugDocument, options);
+}
 export type GetGenderMovideBySlugQueryHookResult = ReturnType<typeof useGetGenderMovideBySlugQuery>;
 export type GetGenderMovideBySlugLazyQueryHookResult = ReturnType<typeof useGetGenderMovideBySlugLazyQuery>;
 export type GetGenderMovideBySlugQueryResult = Apollo.QueryResult<GetGenderMovideBySlugQuery, GetGenderMovideBySlugQueryVariables>;
@@ -6799,13 +6822,13 @@ export const GetMovieBySlugDocument = gql`
  * });
  */
 export function useGetMovieBySlugQuery(baseOptions?: Apollo.QueryHookOptions<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>(GetMovieBySlugDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>(GetMovieBySlugDocument, options);
+}
 export function useGetMovieBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>(GetMovieBySlugDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>(GetMovieBySlugDocument, options);
+}
 export type GetMovieBySlugQueryHookResult = ReturnType<typeof useGetMovieBySlugQuery>;
 export type GetMovieBySlugLazyQueryHookResult = ReturnType<typeof useGetMovieBySlugLazyQuery>;
 export type GetMovieBySlugQueryResult = Apollo.QueryResult<GetMovieBySlugQuery, GetMovieBySlugQueryVariables>;
@@ -6840,13 +6863,13 @@ export const GetMoviesByGenderIdDocument = gql`
  * });
  */
 export function useGetMoviesByGenderIdQuery(baseOptions?: Apollo.QueryHookOptions<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>(GetMoviesByGenderIdDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>(GetMoviesByGenderIdDocument, options);
+}
 export function useGetMoviesByGenderIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>(GetMoviesByGenderIdDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>(GetMoviesByGenderIdDocument, options);
+}
 export type GetMoviesByGenderIdQueryHookResult = ReturnType<typeof useGetMoviesByGenderIdQuery>;
 export type GetMoviesByGenderIdLazyQueryHookResult = ReturnType<typeof useGetMoviesByGenderIdLazyQuery>;
 export type GetMoviesByGenderIdQueryResult = Apollo.QueryResult<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>;
@@ -6877,13 +6900,13 @@ export const GetTitleMovieDocument = gql`
  * });
  */
 export function useGetTitleMovieQuery(baseOptions?: Apollo.QueryHookOptions<GetTitleMovieQuery, GetTitleMovieQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetTitleMovieQuery, GetTitleMovieQueryVariables>(GetTitleMovieDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetTitleMovieQuery, GetTitleMovieQueryVariables>(GetTitleMovieDocument, options);
+}
 export function useGetTitleMovieLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetTitleMovieQuery, GetTitleMovieQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetTitleMovieQuery, GetTitleMovieQueryVariables>(GetTitleMovieDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetTitleMovieQuery, GetTitleMovieQueryVariables>(GetTitleMovieDocument, options);
+}
 export type GetTitleMovieQueryHookResult = ReturnType<typeof useGetTitleMovieQuery>;
 export type GetTitleMovieLazyQueryHookResult = ReturnType<typeof useGetTitleMovieLazyQuery>;
 export type GetTitleMovieQueryResult = Apollo.QueryResult<GetTitleMovieQuery, GetTitleMovieQueryVariables>;

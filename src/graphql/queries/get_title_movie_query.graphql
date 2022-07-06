@@ -1,0 +1,8 @@
+query GetTitleMovie {
+  movies {
+    id
+    title
+    banner
+    slug
+  }
+}

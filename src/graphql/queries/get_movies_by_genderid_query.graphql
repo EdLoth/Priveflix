@@ -1,0 +1,10 @@
+query GetMoviesByGenderId($idGender: ID) {
+  gender(where: { id: $idGender}) {
+    movies(orderBy: publishedAt_DESC){
+      title
+      banner
+      slug
+    }
+    nameGender
+  }
+}

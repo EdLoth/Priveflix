@@ -1,0 +1,17 @@
+query GetMovieBySlug($slug: String) {
+    movie(where: { slug: $slug}) {
+      title
+      videoId
+      description
+      duration
+      poster
+      availableAt
+      ageIndicative
+      genders {
+        nameGender
+      }
+      directors {
+        name
+      }
+    }
+}

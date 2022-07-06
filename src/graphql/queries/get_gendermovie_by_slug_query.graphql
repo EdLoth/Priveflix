@@ -1,0 +1,8 @@
+query GetGenderMovideBySlug($slug: String) {
+    movie(where: { slug: $slug}) {
+      genders {
+      id
+      nameGender
+    }
+  }
+}

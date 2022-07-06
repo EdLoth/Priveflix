@@ -1,4 +1,4 @@
-schema: import.meta.env.VITE_API_URL
+schema: import.meta.env.VITE_CODEGEN_SCHEMA
 documents: './src/graphql/**/*.graphql'
 generates:
   ./src/graphql/generated.ts:

@@ -21,12 +21,19 @@ export function Home() {
     setScrollX(x);
   }
 
+
   const handleRigthArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2);
-    let listW = data.movies.length * 224;
-    if ((window.innerWidth - listW) > x) {
-      x = (window.innerWidth - listW) - 60;
+
+    if (!data) {
+      let listW = 0 * 224;
+    } else {
+      let listW = data.movies.length * 224;
+      if ((window.innerWidth - listW) > x) {
+        x = (window.innerWidth - listW) - 60;
+      }
     }
+    
     setScrollX(x);
   }
 

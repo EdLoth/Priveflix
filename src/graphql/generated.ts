@@ -6696,12 +6696,32 @@ export type GetMoviesByGenderIdQueryVariables = Exact<{
 }>;
 
 
-export type GetMoviesByGenderIdQuery = { __typename?: 'Query', gender?: { __typename?: 'Gender', nameGender?: string | null, movies: Array<{ __typename?: 'Movie', title: string, banner?: string | null, slug?: string | null }> } | null };
+export type GetMoviesByGenderIdQuery = { 
+  __typename?: 'Query', 
+  gender: { 
+    __typename?: 'Gender', 
+    nameGender: string, 
+    movies: Array<{ 
+      __typename?: 'Movie', 
+      id: string, 
+      title: string, 
+      banner: string, 
+      slug: string 
+    }> }
+   };
 
 export type GetTitleMovieQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTitleMovieQuery = { __typename?: 'Query', movies: Array<{ __typename?: 'Movie', id: string, title: string, banner?: string | null, slug?: string | null }> };
+export type GetTitleMovieQuery = {
+   __typename?: 'Query', 
+   movies: Array<{
+     __typename?: 'Movie', 
+     id: string, 
+     title: string, 
+     banner: string, 
+     slug: string 
+    }> };
 
 
 export const GetGenderMovideBySlugDocument = gql`
@@ -6793,6 +6813,7 @@ export const GetMoviesByGenderIdDocument = gql`
     query GetMoviesByGenderId($idGender: ID) {
   gender(where: {id: $idGender}) {
     movies(orderBy: publishedAt_DESC) {
+      id
       title
       banner
       slug

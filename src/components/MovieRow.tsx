@@ -30,10 +30,16 @@ export function MovieRow(props: MovieRowProps) {
 
   const handleRigthArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2);
-    let listW = data.gender.movies.length * 224;
-    if ((window.innerWidth - listW) > x) {
-      x = (window.innerWidth - listW) - 60;
+    if (!data) {
+      let listW = 0 * 224;
+    } else {
+      let listW = data.gender.movies.length * 224;
+      if ((window.innerWidth - listW) > x) {
+        x = (window.innerWidth - listW) - 60;
+      }
     }
+
+
     setScrollX(x);
   }
 
@@ -45,9 +51,7 @@ export function MovieRow(props: MovieRowProps) {
       </div>
     )
   }
-
   return (
-
     <div className="mb-7 group transition-all ">
       <h1 className="ml-8 font-bold text-3xl">Filmes de {data.gender?.nameGender}</h1>
       <div onClick={handleLeftArrow} className="absolute w-[40px] h-80  left-0 z-50 flex justify-center items-center overflow-hidden bg-bg-slate-black opacity-0 group-hover:opacity-100 cursor-pointer transition-all transition">
@@ -65,13 +69,13 @@ export function MovieRow(props: MovieRowProps) {
           marginLeft: scrollX,
           width: data.gender.movies.length * 224
         }}>
-          {data.gender?.movies.map(movie => {
+          {data.gender.movies.map(movie => {
             return (
               <Link className="inline-block" to={`/player/${movie.slug}`} key={movie.id}>
                 <img className="h-80 w-56 rounded-2xl transform scale-90 hover:scale-100 transition-all" src={movie.banner} alt="" />
               </Link>
             )
-          })} 
+          })}
         </div>
       </div>
     </div>

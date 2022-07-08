@@ -1,5 +1,5 @@
 query GetTitleMovie {
-  movies {
+  movies(orderBy: publishedAt_DESC) {
     id
     title
     banner

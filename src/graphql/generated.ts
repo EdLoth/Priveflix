@@ -6701,12 +6701,10 @@ export type GetMovieBySlugQuery = {
     availableAt?: any | null,
     ageIndicative: AgeIndicative,
     genders: Array<{
-      __typename?: 'Gender',
+      __typename: 'Gender',
       nameGender: string
-    }>, directors:
-    Array<{
-      __typename?:
-      'Director',
+    }>, directors: Array<{
+      __typename: 'Director',
       name: string
     }>
   }
@@ -6735,15 +6733,15 @@ export type GetMoviesByGenderIdQuery = {
 export type GetTitleMovieQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTitleMovieQuery = {
-  __typename?: 'Query',
-  movies: Array<{
-    __typename?: 'Movie',
-    id: string,
-    title: string,
-    banner: string,
+export type GetTitleMovieQuery = { 
+  __typename?: 'Query', 
+  movies: Array<{ 
+    __typename?: 'Movie', 
+    id: string, 
+    title: string, 
+    banner: string, 
     slug: string
-  }>
+  }> 
 };
 
 
@@ -6875,7 +6873,7 @@ export type GetMoviesByGenderIdLazyQueryHookResult = ReturnType<typeof useGetMov
 export type GetMoviesByGenderIdQueryResult = Apollo.QueryResult<GetMoviesByGenderIdQuery, GetMoviesByGenderIdQueryVariables>;
 export const GetTitleMovieDocument = gql`
     query GetTitleMovie {
-  movies {
+  movies(orderBy: publishedAt_DESC) {
     id
     title
     banner
